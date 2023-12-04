@@ -1,0 +1,95 @@
+<div class="container">
+    <p-toast></p-toast>
+<div [formGroup]="employeeForm">
+    <div class="flex flex-wrap">
+        <div>
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstName" formControlName = "firstName" id="firstname">
+        </div>
+        <div>
+            <label name="secondname" >Second Name</label>
+        <input type="text" formControlName = "secondName" id="secondname">
+        </div>
+        <div>
+            <label for="midlename">Midle Name</label>
+            <input type="text" formControlName = "midleName" id="midlename">
+        </div>
+    </div>
+    <div class="flex flex-wrap">
+        <div>
+            <label for="passportSerie">Passport Serie</label>
+            <input type="text" formControlName = "passportSerie" id="passportSerie">
+        </div>
+        <div>
+            <label for="pNumber">Passport Number</label>
+            <input type="number" id="pNumber" (onchange)="setPassportNumber($event)" formControlName = "passportNumber" >
+            <div
+            *ngIf="employeeForm.get('passportNumber').invalid && (employeeForm.get('passportNumber').dirty || employeeForm.get('passportNumber').touched)"
+            class="alert"
+            >
+            <div *ngIf="employeeForm.get('passportNumber').errors?.['required']" style="color:red">passportNumber is required.</div>
+            <div *ngIf="employeeForm.get('passportNumber').errors?.['minlength']">
+                Name must be at least 4 characters long.
+            </div>
+            <div *ngIf="name.errors?.['forbiddenName']">
+                Name cannot be Bob.
+            </div>
+            </div>
+        </div>
+       <div>
+           <label for="birthDay">Date Of Birth</label>
+           <input class="birth-date" type="date" name="dateOfBirth" id="birthDay" formControlName="dateOfBirth">
+       </div>
+    </div>
+    <div class="flex flex-wrap">
+        <div>
+            <label for="region">Region</label>
+            <input type="text"name="region" id="region" formControlName = "region">
+         </div>
+        <div>
+            <label for="phoneNumber">Mobile Phone</label>
+            <input type="number" id="phoneNumber" formControlName = "mobilePhone" >
+        </div>
+        <div>
+            <label for="homePhone">Home Phone</label>
+            <input type="number" id="homePhone" formControlName = "homePhone">
+        </div>
+    </div>
+
+    <div class="flex flex-wrap">
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" formControlName = "email">
+        </div>
+        <div>
+            <label for="pinfl">PINFL</label>
+            <input type="number" id="pinfl" formControlName = "PINFL">
+        </div>
+        <div>
+            <label type="text" for="gender">Gender</label>
+                <select class="gender"   id="gender" formControlName="gender">
+                    <option value="Male">Male</option>
+                    <option value="Famale">Famale</option>
+                    <option value="Other">Other</option>
+                </select>
+        </div>
+    </div>
+    <div class="flex flex-wrap" *ngIf="item.id==0">
+        <div>
+            <label for="userName">User Name</label>
+            <input type="text" id="userName" formControlName = "userName">
+        </div>
+        <div>
+            <!-- class="password" -->
+            <label for="password">Password</label>
+            <input type="password" id="password" formControlName = "passwordHash">
+        </div>
+        <div>
+            <label for="password2">Confirm Password</label>
+            <input type="password" id="password2" formControlName = "confirmPassword">
+        </div>
+    </div>
+</div>
+<button class="btn" style="background-color: red; border: 2px solid rgb(130, 3, 3); margin: 4px;" (click)="close()">close</button>
+<button ngClass="btn:{{employeeForm.disabled}}" class="disabled:bg-red-700 bg-green-600 p-4" style="float: right; margin: 4px; " (click)="save()"
+>save</button>

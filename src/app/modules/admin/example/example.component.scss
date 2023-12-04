@@ -1,0 +1,84 @@
+label {
+    display: block;
+    font-weight: bold;
+    margin-left: 12px
+  }
+  input{
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 10px;
+  }
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  .inners{
+    display: flex;
+    border-width: 300px;
+    border: 1px solid red;
+    margin-bottom: 20px;
+  }
+.gender{
+    border: 1px solid rgb(192, 183, 183);
+    background:white;
+    margin-top: 9px;
+    margin-left: 11px;
+    height: 43px;
+    width: 197px;
+    border-radius: 5%;
+}
+select option{
+    background-color: antiquewhite;
+}
+.password{
+    border: 1px solid rgb(192, 183, 183);
+    background:white;
+    margin-top: 9px;
+    margin-left: 11px;
+    height: 43px;
+    width: 197px;
+    border-radius: 5%;
+}
+.confirmPassword{
+    margin-left: 25px;
+}
+.btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+  }
+  .btn:focus {
+    outline: none;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+.hied_this{
+    display: hidden;
+}
+.birth-date{
+    border: 1px solid rgb(192, 183, 183);
+    border-radius: 5%;
+    margin-top: 9px;
+    margin-left: 11px;
+    height: 43px;
+    width: 197px;
+    border-radius: 5%;
+}
+
+

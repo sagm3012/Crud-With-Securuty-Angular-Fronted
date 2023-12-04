@@ -1,0 +1,76 @@
+<div class="p-8">
+    <div>
+        <button
+        style="margin-top: 16px;
+        margin-bottom: 14px;
+        width: 100px;
+        height: 50px"
+        class="btn rounded-full"
+        (click)="showDialog()"
+        ngClass="bg-green-700">Add</button>
+
+     <p-toast></p-toast>
+     <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+    <div class="card">
+        <p-table
+            [value]="userService.user2"
+            [lazy]="true"
+            (onLazyLoad)="userService.loadCustomers($event)"
+            dataKey="id"
+            [tableStyle]="{ 'min-width': '75rem' }"
+
+            [paginator]="true"
+            [rows]="10"
+            [totalRecords]="userService.totalRecords"
+            [loading]="userService.loading"
+            [globalFilterFields]="['name', 'dateOfBirth', 'passport', 'region', 'mobilePhone']">
+
+            <ng-template pTemplate="header" class="styled-table">
+                <tr class="styled-table">
+                    <th pSortableColumn="name">Full Name <p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="gender">Gender <p-sortIcon field="gender"></p-sortIcon></th>
+                    <th pSortableColumn="dateOfBirth">Birthday <p-sortIcon field="dateOfBirth"></p-sortIcon></th>
+                    <th pSortableColumn="passport">Passport Serie and Number <p-sortIcon field="passport"></p-sortIcon></th>
+                    <th pSortableColumn="region">Region<p-sortIcon field="region"></p-sortIcon></th>
+                    <th pSortableColumn="mobilePhone">Phone Number<p-sortIcon field="mobilePhone"></p-sortIcon></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <th>
+                        <p-columnFilter type="text" field="name"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="gender"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="date" field="dateOfBirth"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="passport"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="region"></p-columnFilter>
+                    </th>
+                    <th>
+                        <p-columnFilter type="text" field="mobilePhone"></p-columnFilter>
+                    </th>
+                    <th>&nbsp;</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-item >
+                <tr>
+                    <td>{{item.secondName }} {{ item.firstName }} {{ item.midleName}}</td>
+                    <td>{{item.gender}}</td>
+                    <td>{{item.dateOfBirth | date:'dd.MM.yyyy'}}</td>
+                    <td>{{item.passportSerie}}{{item.passportNumber}}</td>
+                    <td>{{item.region}}</td>
+                    <td>{{item.mobilePhone}}</td>
+                    <td class="card flex flex-wrap gap-3 justify-content-center">
+                        <button label="" ngClass="bg-orange-400" class="btn rounded-full" [text]="true" [raised]="false" [rounded]="false" severity="help" (click)="updateUser(item)">Update</button>
+                        <button label="" ngClass="bg-red-600" class="btn rounded-full" [text]="true" [raised]="true" [rounded]="true" severity="danger" (click)="deleteUser(item.id)">Delete</button>
+                    </td>
+                  </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

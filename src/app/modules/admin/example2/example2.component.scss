@@ -1,0 +1,156 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+  form{
+    width: 100%; border: 1px solid grey;
+  }
+  label{
+    border: 30px;
+  }
+
+  input[type="text"] {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin: 10px;
+  }
+
+  input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  .inners{
+    display: flex;
+    border-width: 300px;
+    border: 1px solid red;
+    margin-bottom: 20px;
+  }
+//   table {
+//      border-collapse: collapse;
+//       font-family: Tahoma, Geneva, sans-serif;
+//       margin-left:  20px;
+//       margin-right: 200px;
+//       width: 100%;
+//       height: 100%;
+//   }
+//   table  table td {
+//     padding: 15px;
+//   }
+//   table thead td {
+//     background-color: #54585d;
+//     color: #ffffff;
+//     font-weight: bold;
+//     font-size: 13px;
+//     border: 1px solid #54585d;
+//   }
+//   table tbody td {
+//     color: #636363;
+//     border: 1px solid #dddfe1;
+//   }
+//   table tbody tr {
+//     background-color: #f9fafb;
+//     display: center;
+//   }
+//   table tbody tr:nth-child(odd) {
+//     background-color: #ffffff;
+//   }
+//   table, th, td {
+//     border: 1px solid grey;
+//     background-color: #efe8e8;
+// }
+// .thead-dark{
+//    background-color: rgb(111, 106, 106);
+// }
+// .header{
+//     background-color: #000;
+//     text-emphasis-color: white;
+// }
+
+// .styled-table {
+//     border-collapse: collapse;
+//     margin: 25px 0;
+//     font-size: 0.9em;
+//     font-family: sans-serif;
+//     min-width: 400px;
+//     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+// }
+// .styled-table thead tr {
+//     background-color: #009879;
+//     color: #ffffff;
+//     text-align: left;
+// }
+// .styled-table th,
+// .styled-table td {
+//     padding: 12px 15px;
+// }
+// .styled-table tbody tr {
+//     border-bottom: 1px solid #dddddd;
+// }
+
+// .styled-table tbody tr:nth-of-type(even) {
+//     background-color: #f3f3f3;
+// }
+
+// .styled-table tbody tr:last-of-type {
+//     border-bottom: 2px solid #009879;
+// }
+// .styled-table tbody tr.active-row {
+//     font-weight: bold;
+//     color: #009879;
+// }
+// .bc{
+//     background-color: rgb(186, 180, 180);
+// }
+  //=== Pen styling, ignore
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #edf3f3;
+  }
+  body {
+    background: #1f1a25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  .btn {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: inherit;
+  }
+  .btn:focus {
+    outline: none;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+.p-button-label{
+
+    margin-right: 25px;
+  }
+
